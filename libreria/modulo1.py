@@ -24,10 +24,21 @@ class db:
         except sqlite3.Error as e:
             print(f"Error al insertar el registro: {e}")
 
-    def consultar_datos(self, nombre_tabla):
+    def consultar_datos_tabla(self, nombre_tabla):
         """Consulta y muestra todos los datos de una tabla."""
         try:
             self.cursor.execute(f"SELECT * FROM {nombre_tabla}")
+            filas = self.cursor.fetchall()
+            for fila in filas:
+                print(fila)
+        except sqlite3.Error as e:
+            print(f"Error al consultar los datos: {e}")
+
+    def filtrar_datos_tabla(self, tabla, columna, condicion):
+        """Buscar información específica de una columna en base a la condición fíjada"""
+        try:
+            query = (f"SELECT * FROM {tabla} WHERE {columna} {condicion}")
+            self.cursor.execute(query)
             filas = self.cursor.fetchall()
             for fila in filas:
                 print(fila)
