@@ -1,24 +1,23 @@
 # Bono-DB-Manager                                                                                                                              
 
-Bono-DB es una librería en Python diseñada para simplificar la gestión de bases de datos SQLite. Ofrece una interfaz intuitiva para crear, manipular e interactuar con bases de datos, permitiendo a los desarrolladores centrarse en la lógica de la aplicación en lugar de en detalles técnicos de la base de datos.
-Este poyecto puede ser tu primer good first issue
+Bono-DB is a Python library designed to simplify SQLite database management. It provides an intuitive interface for creating, manipulating and interacting with databases, allowing developers to focus on application logic rather than technical database details.
+This project can be your first good first issue.
 
-
-## Insignia
+## Badge
 Add badges from somewhere like: [shields.io](https://shields.io/)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 
 
-## Contribuyendo
+## Contributing
 
-¡Las contribuciones siempre son bienvenidas!
+Contributions are always welcome!
 
-Consulta `contributing.md` para ver cómo empezar.
+See `contributing.md` to see how to get started.
 
 
-## Uso/Ejemplos
+## Usage/Examples
 
 ```Python
 from libreria.modulo1 import db
@@ -31,7 +30,7 @@ mi_db.crear_tabla("usuarios", "id INTEGER PRIMARY KEY, nombre TEXT, edad INTEGER
 ```
 
 
-## Autor
+## Author
 
 - [@AbelolDev](https://github.com/AbelolDev)
 
