@@ -31,6 +31,7 @@ my_db.insert_record('players', 'name, score, credits', ('John', 100, 50))
 my_db.query_table_data('players')
 my_db.filter_table_data('players','credits','>10')
 my_db.close_connection()
+db.cipher('users', 'password')
 
 ```
 
