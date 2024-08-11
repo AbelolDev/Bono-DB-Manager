@@ -1,4 +1,5 @@
 import sqlite3
+import hashlib
 
 class DB:
     def __init__(self, db_path):
@@ -44,6 +45,28 @@ class DB:
                 print(row)
         except sqlite3.Error as e:
             print(f"Error querying data: {e}")
+
+    def cipher(self, table, column):
+        """Encrypts text in a column with SHA-256 protocol."""
+        try:
+            query = f"SELECT id, {column} FROM {table}"
+            self.cursor.execute(query)
+            rows = self.cursor.fetchall()
+
+            for row in rows:
+                record_id = row[0]
+                original_value = str(row[1])
+                encrypted_value = hashlib.sha256(original_value.encode()).hexdigest()
+
+                update_query = f"UPDATE {table} SET {column} = ? WHERE id = ?"
+                self.cursor.execute(update_query, (encrypted_value, record_id))
+
+            self.connection.commit()
+            print("Encryption complete.")
+
+        except sqlite3.Error as e:
+            print(f"Error querying data: {e}")
+
 
     def close_connection(self):
         """Closes the connection to the database."""
