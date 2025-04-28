@@ -20,6 +20,8 @@ See `contributing.md` to see how to get started.
 ## Usage/Examples
 
 ```Python
+#Run genKey script to generate a secure database key for your encrpytion. 
+
 from library.DataBase import DB
 
 # Create an instance of the DB class
@@ -32,6 +34,9 @@ my_db.query_table_data('players')
 my_db.filter_table_data('players','credits','>10')
 my_db.close_connection()
 db.cipher('users', 'password')
+# New Feature
+db.encrypt_column('users', 'address') # Secures personal user data
+db.decrypt_column('users', 'address') # Retrieves the secure data
 
 ```
 
@@ -39,4 +44,4 @@ db.cipher('users', 'password')
 ## Author
 
 - [@AbelolDev](https://github.com/AbelolDev)
-
+- [DevAidanH] (https://github.com/DevAidanH)
